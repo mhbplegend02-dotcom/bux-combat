@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bux Combat </title>
+<style>
+body{font-family:Arial;background:#0b0b0b;color:#fff;padding:20px}
+input,button{padding:12px;font-size:16px;margin-top:10px}
+.card{background:#141414;padding:20px;margin-top:20px;border-radius:10px}
+</style>
+</head>
+<body><h1>🥋 Elite MMA Coaching System</h1><div class="card">
+<h2>🧠 Daily Training Generator</h2>
+<button onclick="generateDay()">Generate Today’s Training</button>
+<div id="day"></div>
+</div><div class="card">
+<h2>🥋 Skill Development (BJJ + MMA)</h2>
+<button onclick="skills()">Generate Skill Work</button>
+<div id="skills"></div>
+</div><div class="card">
+<h2>🏋️ Strength & Conditioning</h2>
+<button onclick="strength()">Generate Strength Plan</button>
+<div id="strength"></div>
+</div><div class="card">
+<h2>🤸 Mobility & Flexibility</h2>
+<button onclick="mobility()">Generate Mobility Plan</button>
+<div id="mobility"></div>
+</div><div class="card">
+<h2>⚔️ Fight IQ Simulation</h2>
+<button onclick="simulate()">Simulate Fight Scenario</button>
+<div id="fight"></div>
+</div><script>
+
+// 🧠 DAILY TRAINING SYSTEM
+function generateDay(){
+  let plan = `
+  <h3>Morning</h3>
+  <ul>
+    <li>Sprints (5x)</li>
+    <li>Shadow wrestling (10 min)</li>
+  </ul>
+
+  <h3>Evening</h3>
+  <ul>
+    <li>Grappling drills (30 min)</li>
+    <li>Sparring (light to hard rounds)</li>
+  </ul>
+
+  <h3>Night</h3>
+  <ul>
+    <li>Stretch + mobility</li>
+  </ul>`;
+
+  document.getElementById("day").innerHTML = plan;
+}
+
+// 🥋 SKILL SYSTEM
+function skills(){
+  let drills = [
+    "Takedown entries (double/single)",
+    "Guard passing chains",
+    "Submission transitions",
+    "Clinch control",
+    "Boxing combinations"
+  ];
+
+  document.getElementById("skills").innerHTML = "<ul>"+drills.map(x=>`<li>${x}</li>`).join("")+"</ul>";
+}
+
+// 🏋️ STRENGTH SYSTEM
+function strength(){
+  let plan = [
+    "Push-ups (explosive)",
+    "Pull-ups",
+    "Squats",
+    "Core (planks, leg raises)",
+    "Neck training",
+    "Grip strength"
+  ];
+
+  document.getElementById("strength").innerHTML = "<ul>"+plan.map(x=>`<li>${x}</li>`).join("")+"</ul>";
+}
+
+// 🤸 MOBILITY SYSTEM
+function mobility(){
+  let m = [
+    "Hip openers",
+    "Hamstring stretch",
+    "Shoulder mobility",
+    "Spine rotation",
+    "Deep squat holds",
+    "Neck mobility"
+  ];
+
+  document.getElementById("mobility").innerHTML = "<ul>"+m.map(x=>`<li>${x}</li>`).join("")+"</ul>";
+}
+
+// ⚔️ FIGHT SIMULATION
+function simulate(){
+  let scenarios = [
+    "Opponent shoots → sprawl → take back",
+    "Clinch battle → knee + trip",
+    "Striking exchange → level change",
+    "Guard situation → pass → mount",
+    "Under pressure → circle → counter"
+  ];
+
+  let chosen = scenarios[Math.floor(Math.random()*scenarios.length)];
+
+  document.getElementById("fight").innerHTML = `<p>${chosen}</p>`;
+}
+
+</script></body>
+</html>
